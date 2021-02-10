@@ -1,9 +1,15 @@
-const person:{
-    name: string;
-    age: number
-} ={
-    name: "Mamadou",
-    age: 24
+function add(n1: number, n2: number): number{
+    return n1 +n2
 }
 
-console.log(person.age)
+function printResult(num: number){
+console.log("Result:" + num)
+}
+
+
+let combineValues: Function;
+
+combineValues = add
+
+console.log(combineValues(2, 2))
+printResult(add(5, 5))

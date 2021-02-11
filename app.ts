@@ -1,15 +1,14 @@
-function add(n1: number, n2: number): number{
-    return n1 +n2
+let userInput: unknown;
+let username: string
+userInput = 5
+userInput = 'Goat'
+
+if(typeof userInput === "string"){
+    username = userInput
 }
 
-function printResult(num: number){
-console.log("Result:" + num)
+function generrateErroe(message: string, code: number): never{
+    throw{message: message, errorCode: code}
 }
 
-
-let combineValues: Function;
-
-combineValues = add
-
-console.log(combineValues(2, 2))
-printResult(add(5, 5))
+generrateErroe("an error occurred", 500)

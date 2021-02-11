@@ -1,10 +1,7 @@
-function add(n1, n2) {
-    return n1 + n2;
+var userInput;
+var username;
+userInput = 5;
+userInput = 'Goat';
+if (typeof userInput === "string") {
+    username = userInput;
 }
-function printResult(num) {
-    console.log("Result:" + num);
-}
-var combineValues;
-combineValues = add;
-console.log(combineValues(2, 2));
-printResult(add(5, 5));

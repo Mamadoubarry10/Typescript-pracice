@@ -1,14 +1,22 @@
-let userInput: unknown;
-let username: string
-userInput = 5
-userInput = 'Goat'
+class Department {
+    name: string;
+    private employees: string[] = [];
 
-if(typeof userInput === "string"){
-    username = userInput
+    constructor(n:string){
+        this.name = n
+        
+    }
+
+    describe(this: Department){
+        console.log(`deparment: ${this.name}`)
+    }
+
+    addemployee(employee:string){
+        this.employees.push(employee)
+    }
 }
 
-function generrateErroe(message: string, code: number): never{
-    throw{message: message, errorCode: code}
-}
-
-generrateErroe("an error occurred", 500)
+const accounting = new Department('Accounting')
+accounting.addemployee("Mamadou")
+accounting.addemployee("james")
+console.log(accounting)

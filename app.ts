@@ -1,30 +1,31 @@
-class Department {
-    private employees: string[] = [];
 
-    constructor(private readonly id: string, public name:string){
-        
+
+interface Greetable{
+    readonly name: string;
+
+    greet(phrase: string): void;
+}
+
+class Person implements Greetable{
+    name: string;
+
+    constructor(n: string){
+    this.name = n
     }
-
-    describe(this: Department){
-        console.log(`deparment: ${this.name}`)
+    greet(phrase: string){
+    console.log(`${phrase} ${this.name}`)
     }
+    
+}
 
-    addemployee(employee:string){
-        this.employees.push(employee)
+let user1: Greetable;
+
+user1 = {
+    name: "Max",
+    age: 30,
+    greet(phrase: string){
+        console.log(`${phrase} ${this.name}`)
     }
 }
 
-class ITDeprtment extends Department{
-    admins: string[]
-    constructor(id: string, admins: string[]){
-        super(id, 'IT');
-        this.admins = admins
-    }
-}
-
-const NewITDepartment = new ITDeprtment("d2", ['Max','randle'])
-// const accounting = new Department('D1','Accounting')
-NewITDepartment.addemployee("Mamadou")
-NewITDepartment.addemployee("james")
-
-console.log(NewITDepartment)
+user1.greet("hi there i am")
